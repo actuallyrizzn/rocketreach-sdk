@@ -2,7 +2,7 @@
     "name": "rocketreach/sdk",
     "description": "PHP SDK for RocketReach People Search API",
     "type": "library",
-    "license": "MIT",
+    "license": "AGPL-3.0-or-later",
     "authors": [
         {
             "name": "RocketReach SDK Team",

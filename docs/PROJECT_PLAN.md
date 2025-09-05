@@ -4,7 +4,7 @@
 Building comprehensive SDKs for the RocketReach People Search API in both PHP and Python, with complete test coverage and robust error handling.
 
 ## API Configuration
-**RocketReach API Key:** `***REMOVED***`
+**RocketReach API Key:** `[YOUR_API_KEY]` (Get from [RocketReach Dashboard](https://rocketreach.co/api))
 **Base URL:** `https://api.rocketreach.co/api/v2`
 
 **⚠️ API Usage Strategy:**

@@ -128,6 +128,8 @@ pytest
 
 Get your API key from the [RocketReach Dashboard](https://rocketreach.co/api).
 
+**⚠️ Important**: Never commit API keys to version control. Use environment variables or secure configuration files.
+
 ## 📋 Requirements
 
 - **PHP**: 8.1+
@@ -143,7 +145,8 @@ Get your API key from the [RocketReach Dashboard](https://rocketreach.co/api).
 
 ## 📄 License
 
-MIT License - see [LICENSE](LICENSE) file for details.
+- **Code**: GNU Affero General Public License v3.0 - see [LICENSE](LICENSE) file for details
+- **Documentation**: Creative Commons Attribution-ShareAlike 4.0 International - see [LICENSE-DOCS](LICENSE-DOCS) file for details
 
 ## 🆘 Support
 
