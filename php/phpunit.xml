@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.0/phpunit.xsd"
+         bootstrap="tests/bootstrap.php"
+         colors="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         cacheDirectory=".phpunit.cache"
+         executionOrder="depends,defects"
+         requireCoverageMetadata="true"
+         beStrictAboutCoverageMetadata="true"
+         beStrictAboutOutputDuringTests="true"
+         failOnRisky="true"
+         failOnWarning="true">
+    
+    <testsuites>
+        <testsuite name="Unit">
+            <directory>tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Integration">
+            <directory>tests/Integration</directory>
+        </testsuite>
+        <testsuite name="E2E">
+            <directory>tests/E2E</directory>
+        </testsuite>
+        <testsuite name="Live">
+            <directory>tests/Live</directory>
+        </testsuite>
+        <testsuite name="All">
+            <directory>tests/Unit</directory>
+            <directory>tests/Integration</directory>
+            <directory>tests/E2E</directory>
+            <directory>tests/Live</directory>
+        </testsuite>
+    </testsuites>
+
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+        <exclude>
+            <directory>src/Exceptions</directory>
+        </exclude>
+        <report>
+            <html outputDirectory="coverage/html"/>
+            <text outputFile="coverage/coverage.txt"/>
+            <clover outputFile="coverage/clover.xml"/>
+        </report>
+    </coverage>
+
+    <php>
+        <env name="APP_ENV" value="testing"/>
+        <env name="ROCKETREACH_API_KEY" value="test-key"/>
+        <env name="ROCKETREACH_BASE_URL" value="https://api.rocketreach.co/api/v2"/>
+    </php>
+</phpunit>
