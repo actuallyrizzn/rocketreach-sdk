@@ -151,15 +151,21 @@ class EnrichResponse:
     
     def __init__(self, data: Dict[str, Any]):
         """Initialize from API response data."""
-        # The API returns a flat structure, not separate person/company objects
-        self.person = data
-        self.company = {
-            'id': data.get('current_employer_id'),
-            'name': data.get('current_employer'),
-            'domain': data.get('current_employer_domain'),
-            'website': data.get('current_employer_website'),
-            'linkedin_url': data.get('current_employer_linkedin_url')
-        }
+        # Handle both flat structure (real API) and nested structure (test data)
+        if 'person' in data:
+            # Test data structure with person object
+            self.person = data.get('person', {})
+            self.company = data.get('company', {})
+        else:
+            # Real API flat structure
+            self.person = data
+            self.company = {
+                'id': data.get('current_employer_id'),
+                'name': data.get('current_employer'),
+                'domain': data.get('current_employer_domain'),
+                'website': data.get('current_employer_website'),
+                'linkedin_url': data.get('current_employer_linkedin_url')
+            }
     
     # Person properties
     @property
