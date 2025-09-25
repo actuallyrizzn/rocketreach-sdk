@@ -26,3 +26,7 @@ vendor/
 # Build outputs
 build/
 dist/
+replacements.txt
+python/tests/__pycache__/conftest.cpython-313-pytest-8.4.2.pyc
+python/tests/live/__pycache__/__init__.cpython-313.pyc
+python/tests/live/__pycache__/test_live_api.cpython-313-pytest-8.4.2.pyc
