@@ -77,6 +77,12 @@ def search_response_data():
                 "name": "John Doe",
                 "current_employer": "Google",
                 "status": "complete"
+            },
+            {
+                "id": 67890,
+                "name": "Jane Smith",
+                "current_employer": "Microsoft",
+                "status": "complete"
             }
         ],
         "pagination": {
@@ -105,12 +111,17 @@ def enrich_response_data():
     return {
         "person": {
             "id": 12345,
-            "name": "John Doe"
+            "name": "John Doe",
+            "emails": [{"email": "john@google.com", "type": "work"}],
+            "phones": [{"phone": "+1-555-123-4567", "type": "work"}]
         },
         "company": {
             "id": 98765,
             "name": "Google",
-            "domain": "google.com"
+            "domain": "google.com",
+            "industry": "Internet",
+            "employee_count": "100000+",
+            "location": "Mountain View, CA"
         }
     }
 

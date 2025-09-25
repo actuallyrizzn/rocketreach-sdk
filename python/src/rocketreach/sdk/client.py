@@ -63,10 +63,7 @@ class RocketReachClient:
             retry_delay=self._retry_delay,
         )
         
-        # Initialize endpoint clients
-        self._people_search = PeopleSearch(self._http_client)
-        self._person_lookup = PersonLookup(self._http_client)
-        self._person_enrich = PersonEnrich(self._http_client)
+        # HTTP client is already stored in self._http_client
     
     @property
     def api_key(self) -> str:
@@ -100,7 +97,7 @@ class RocketReachClient:
         Returns:
             PeopleSearch: The people search endpoint client
         """
-        return self._people_search
+        return PeopleSearch(self._http_client)
     
     def person_lookup(self) -> PersonLookup:
         """
@@ -109,7 +106,7 @@ class RocketReachClient:
         Returns:
             PersonLookup: The person lookup endpoint client
         """
-        return self._person_lookup
+        return PersonLookup(self._http_client)
     
     def person_enrich(self) -> PersonEnrich:
         """
@@ -118,7 +115,7 @@ class RocketReachClient:
         Returns:
             PersonEnrich: The person enrich endpoint client
         """
-        return self._person_enrich
+        return PersonEnrich(self._http_client)
     
     def get_account_info(self) -> Dict[str, Any]:
         """

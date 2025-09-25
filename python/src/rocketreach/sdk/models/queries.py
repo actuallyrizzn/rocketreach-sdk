@@ -51,9 +51,17 @@ class SearchQuery:
         """
         data = {}
         
-        # Add parameters that are not None
+        # Add parameters that are not None and not default values
         for field_name, value in self.__dict__.items():
             if value is not None:
+                # Skip default values for pagination and ordering
+                if field_name == 'page' and value == 1:
+                    continue
+                if field_name == 'page_size' and value == 10:
+                    continue
+                if field_name == 'order_by' and value == "relevance":
+                    continue
+                
                 # Convert field names to API parameter names
                 api_name = field_name.replace('_', '_')
                 data[api_name] = value

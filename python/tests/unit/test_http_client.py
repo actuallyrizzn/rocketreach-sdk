@@ -28,7 +28,7 @@ class TestHttpClient:
         assert client.retry_attempts == 3
         assert client.retry_delay == 1.0
         assert client.session is not None
-        assert client.session.headers['Authorization'] == f'Bearer {valid_api_key}'
+        assert client.session.headers['Api-Key'] == valid_api_key
         assert client.session.headers['Content-Type'] == 'application/json'
         assert 'RocketReach-Python-SDK' in client.session.headers['User-Agent']
     
